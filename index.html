@@ -291,33 +291,82 @@
         </p>
       </div>
 
-      <!-- Formulário Placeholder -->
-      <form onsubmit="event.preventDefault();" class="space-y-4">
+      <!-- Formulário com envio via Formspree e proteção anti-spam -->
+      <form id="contact-form" action="https://formspree.io/f/mrpqzezb" method="POST" class="space-y-4">
         <div>
-          <label class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">Nome</label>
-          <input type="text" placeholder="O teu nome" 
+          <label for="name" class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">Nome</label>
+          <input type="text" id="name" name="name" required placeholder="O teu nome" 
                  class="w-full bg-brand-cream px-4 py-3 rounded-xl border border-brand-dark/15 focus:outline-none focus:border-brand-terracotta text-sm transition-colors">
         </div>
 
         <div>
-          <label class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">E-mail</label>
-          <input type="email" placeholder="nome@exemplo.com" 
+          <label for="email" class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="nome@exemplo.com" 
                  class="w-full bg-brand-cream px-4 py-3 rounded-xl border border-brand-dark/15 focus:outline-none focus:border-brand-terracotta text-sm transition-colors">
         </div>
 
         <div>
-          <label class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">Mensagem</label>
-          <textarea rows="4" placeholder="Escreve a tua mensagem aqui..." 
+          <label for="message" class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">Mensagem</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Escreve a tua mensagem aqui..." 
                     class="w-full bg-brand-cream px-4 py-3 rounded-xl border border-brand-dark/15 focus:outline-none focus:border-brand-terracotta text-sm transition-colors"></textarea>
         </div>
 
-        <div class="pt-2 flex justify-end">
-          <button type="submit" 
-                  class="bg-brand-terracotta text-brand-cream font-mono text-xs uppercase tracking-wider font-bold px-8 py-3 rounded-full hover:bg-brand-dark transition-all">
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div id="form-status" class="text-xs font-mono hidden"></div>
+          <button type="submit" id="submit-btn"
+                  class="w-full sm:w-auto ml-auto bg-brand-terracotta text-brand-cream font-mono text-xs uppercase tracking-wider font-bold px-8 py-3 rounded-full hover:bg-brand-dark transition-all disabled:opacity-50">
             Enviar
           </button>
         </div>
       </form>
+
+      <script>
+        const form = document.getElementById('contact-form');
+        const statusEl = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', async function(event) {
+          event.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Enviando...';
+          statusEl.classList.remove('hidden', 'text-brand-forest', 'text-red-600');
+          statusEl.classList.add('text-brand-dark/70');
+          statusEl.textContent = 'A enviar a mensagem...';
+
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+              statusEl.classList.remove('text-brand-dark/70');
+              statusEl.classList.add('text-brand-forest');
+              statusEl.textContent = 'Mensagem enviada com sucesso! Obrigada.';
+              form.reset();
+              submitBtn.textContent = 'Enviado';
+              setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar';
+              }, 4000);
+            } else {
+              const data = await response.json();
+              statusEl.classList.remove('text-brand-dark/70');
+              statusEl.classList.add('text-red-600');
+              statusEl.textContent = data.errors ? data.errors.map(e => e.message).join(', ') : 'Erro ao enviar. Tenta novamente.';
+              submitBtn.disabled = false;
+              submitBtn.textContent = 'Enviar';
+            }
+          } catch (err) {
+            statusEl.classList.remove('text-brand-dark/70');
+            statusEl.classList.add('text-red-600');
+            statusEl.textContent = 'Erro de ligação. Tenta novamente mais tarde.';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Enviar';
+          }
+        });
+      </script>
 
     </div>
   </section>
