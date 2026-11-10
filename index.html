@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quieto | AI Detox Club</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            sand: {
+              50: '#FAF8F5',
+              100: '#F4EFEA',
+              200: '#E8DFD5',
+            },
+            clay: '#3C3836',
+            terracotta: '#C15C3D',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-sand-50 text-clay font-sans antialiased selection:bg-sand-200">
+
+  <!-- Header -->
+  <header class="max-w-4xl mx-auto px-6 py-10 flex justify-between items-center border-b border-sand-200">
+    <div class="text-xl font-medium tracking-tight">Quieto</div>
+    <a href="#detox" class="text-xs uppercase tracking-widest text-clay/70 hover:text-clay transition-colors">
+      AI Detox Club
+    </a>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-3xl mx-auto px-6 py-20 text-center">
+    <span class="inline-block text-xs uppercase tracking-widest text-terracotta bg-terracotta/10 px-3 py-1 rounded-full mb-6 font-medium">
+      Novo Ciclo • Inscrições Abertas
+    </span>
+
+    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-clay leading-tight mb-6">
+      AI Detox Club
+    </h1>
+
+    <p class="text-base sm:text-lg text-clay/80 font-normal leading-relaxed max-w-xl mx-auto mb-10">
+      Desconecte do ecrã e volte à produção 100% manual. Oficinas e práticas para quem precisa desacelerar e criar com as próprias mãos.
+    </p>
+
+    <!-- Botão Principal (Link da Hotmart) -->
+    <div>
+      <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer" 
+         class="inline-block bg-clay text-sand-50 text-sm font-medium px-8 py-4 rounded-full shadow-sm hover:bg-black transition-all hover:-translate-y-0.5">
+        Quero entrar no Clube
+      </a>
+      <p class="text-xs text-clay/50 mt-3 font-light">Acesso via área de membros da Hotmart</p>
+    </div>
+  </main>
+
+  <!-- Seções com Lorem Ipsum (Placeholder) -->
+  <section id="detox" class="max-w-4xl mx-auto px-6 py-16 border-t border-sand-200">
+    <div class="text-center max-w-md mx-auto mb-12">
+      <h2 class="font-serif text-2xl sm:text-3xl mb-3">Como funciona</h2>
+      <p class="text-sm text-clay/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 bg-sand-100 rounded-2xl">
+        <span class="text-xs font-mono text-terracotta">01</span>
+        <h3 class="font-serif text-lg mt-2 mb-2">Desconexão Real</h3>
+        <p class="text-sm text-clay/70 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+        </p>
+      </div>
+
+      <div class="p-6 bg-sand-100 rounded-2xl">
+        <span class="text-xs font-mono text-terracotta">02</span>
+        <h3 class="font-serif text-lg mt-2 mb-2">Processo Manual</h3>
+        <p class="text-sm text-clay/70 leading-relaxed">
+          Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper.
+        </p>
+      </div>
+
+      <div class="p-6 bg-sand-100 rounded-2xl">
+        <span class="text-xs font-mono text-terracotta">03</span>
+        <h3 class="font-serif text-lg mt-2 mb-2">Comunidade Quieto</h3>
+        <p class="text-sm text-clay/70 leading-relaxed">
+          Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chamada Final -->
+  <section class="max-w-3xl mx-auto px-6 py-20 text-center border-t border-sand-200">
+    <h2 class="font-serif text-3xl mb-4">Pronto para descansar a cabeça?</h2>
+    <p class="text-sm text-clay/70 max-w-md mx-auto mb-8">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+    </p>
+    <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer" 
+       class="inline-block bg-clay text-sand-50 text-sm font-medium px-8 py-4 rounded-full shadow-sm hover:bg-black transition-all">
+      Garantir minha vaga
+    </a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="max-w-4xl mx-auto px-6 py-8 border-t border-sand-200 flex flex-col sm:flex-row justify-between items-center text-xs text-clay/50 gap-4">
+    <p>© 2026 Quieto. Todos os direitos reservados.</p>
+    <div class="flex gap-4">
+      <a href="#" class="hover:underline">Instagram</a>
+      <a href="#" class="hover:underline">Termos</a>
+      <a href="#" class="hover:underline">Privacidade</a>
+    </div>
+  </footer>
+
+</body>
+</html>
