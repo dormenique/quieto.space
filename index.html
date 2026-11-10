@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quieto | AI Detox Club</title>
   
+  <!-- Ícone da Aba do Navegador (Favicon em Terracota) -->
+  <link rel="icon" type="image/svg+xml" href="quieto-logo-simples.svg">
+  <script>
+    // Carrega o quieto-logo-simples.svg e aplica a cor Terracota (#C05634) diretamente na aba do navegador
+    fetch('quieto-logo-simples.svg')
+      .then(res => res.text())
+      .then(svgText => {
+        let terracottaSvg = svgText
+          .replace(/#000000|black/gi, '#C05634')
+          .replace(/<path(?![^>]*fill=)/i, '<path fill="#C05634" ')
+          .replace(/<svg(?![^>]*fill=)/i, '<svg fill="#C05634" ');
+        const blob = new Blob([terracottaSvg], { type: 'image/svg+xml' });
+        const iconLink = document.querySelector("link[rel*='icon']");
+        if (iconLink) iconLink.href = URL.createObjectURL(blob);
+      })
+      .catch(() => {});
+  </script>
+
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
