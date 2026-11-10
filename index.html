@@ -1,125 +1,266 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quieto | AI Detox Club</title>
+  
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Bricolage Grotesque, Space Mono, Karla -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            serif: ['"Playfair Display"', 'serif'],
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            title: ['"Bricolage Grotesque"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+            body: ['"Karla"', 'sans-serif'],
           },
           colors: {
-            sand: {
-              50: '#FAF8F5',
-              100: '#F4EFEA',
-              200: '#E8DFD5',
-            },
-            clay: '#3C3836',
-            terracotta: '#C15C3D',
+            brand: {
+              cream: '#FDFBF7',
+              pink: '#E59AA1',
+              terracotta: '#C05634',
+              mustard: '#E09F3E',
+              purple: '#8B7FAD',
+              sage: '#7A8D75',
+              forest: '#2B4C36',
+              dark: '#2E2C28',
+            }
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-sand-50 text-clay font-sans antialiased selection:bg-sand-200">
+<body class="bg-brand-cream text-brand-dark font-body antialiased selection:bg-brand-pink/30">
 
-  <!-- Header -->
-  <header class="max-w-4xl mx-auto px-6 py-10 flex justify-between items-center border-b border-sand-200">
-    <div class="text-xl font-medium tracking-tight">Quieto</div>
-    <a href="#detox" class="text-xs uppercase tracking-widest text-clay/70 hover:text-clay transition-colors">
-      AI Detox Club
-    </a>
+  <!-- ==================== HEADER ==================== -->
+  <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-dark/10">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="inline-block transition-transform hover:scale-105" aria-label="Quieto Início">
+        <img src="quieto-logo.svg" alt="Quieto" class="h-10 w-auto filter-terracotta">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono tracking-wider uppercase text-brand-dark/80">
+        <a href="#clube" class="hover:text-brand-terracotta transition-colors">O Clube</a>
+        <a href="#como-funciona" class="hover:text-brand-terracotta transition-colors">Como Funciona</a>
+        <a href="#manifesto" class="hover:text-brand-terracotta transition-colors">Manifesto</a>
+        <a href="#contacto" class="hover:text-brand-terracotta transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Botão rápido no cabeçalho -->
+      <div class="hidden sm:block">
+        <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer" 
+           class="inline-block bg-brand-terracotta text-brand-cream font-mono text-xs uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-brand-dark transition-all shadow-sm">
+          Fazer Parte
+        </a>
+      </div>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <main class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <span class="inline-block text-xs uppercase tracking-widest text-terracotta bg-terracotta/10 px-3 py-1 rounded-full mb-6 font-medium">
-      Novo Ciclo • Inscrições Abertas
-    </span>
-
-    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-clay leading-tight mb-6">
+  <!-- ==================== HERO SECTION (O CLUBE) ==================== -->
+  <section id="clube" class="max-w-4xl mx-auto px-6 pt-20 pb-24 text-center">
+    <h1 class="font-title font-extrabold text-5xl sm:text-6xl md:text-7xl text-brand-forest uppercase tracking-tight leading-tight mb-6">
       AI Detox Club
     </h1>
 
-    <p class="text-base sm:text-lg text-clay/80 font-normal leading-relaxed max-w-xl mx-auto mb-10">
-      Desconecte do ecrã e volte à produção 100% manual. Oficinas e práticas para quem precisa desacelerar e criar com as próprias mãos.
+    <p class="font-body text-lg sm:text-xl text-brand-dark/80 max-w-xl mx-auto leading-relaxed mb-10">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Desconexão real e prática manual.
     </p>
 
-    <!-- Botão Principal (Link da Hotmart) -->
     <div>
-      <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer" 
-         class="inline-block bg-clay text-sand-50 text-sm font-medium px-8 py-4 rounded-full shadow-sm hover:bg-black transition-all hover:-translate-y-0.5">
-        Quero entrar no Clube
+      <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer"
+         class="inline-block bg-brand-terracotta text-brand-cream font-mono text-xs sm:text-sm uppercase tracking-wider font-bold px-10 py-4 rounded-full shadow-md hover:bg-brand-dark hover:scale-105 transition-all">
+        Quero Fazer Parte
       </a>
-      <p class="text-xs text-clay/50 mt-3 font-light">Acesso via área de membros da Hotmart</p>
+      <p class="font-mono text-xs text-brand-dark/50 mt-3">Acesso via área de membros da Hotmart</p>
     </div>
-  </main>
+  </section>
 
-  <!-- Seções com Lorem Ipsum (Placeholder) -->
-  <section id="detox" class="max-w-4xl mx-auto px-6 py-16 border-t border-sand-200">
-    <div class="text-center max-w-md mx-auto mb-12">
-      <h2 class="font-serif text-2xl sm:text-3xl mb-3">Como funciona</h2>
-      <p class="text-sm text-clay/70">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="p-6 bg-sand-100 rounded-2xl">
-        <span class="text-xs font-mono text-terracotta">01</span>
-        <h3 class="font-serif text-lg mt-2 mb-2">Desconexão Real</h3>
-        <p class="text-sm text-clay/70 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+  <!-- ==================== COMO FUNCIONA ==================== -->
+  <section id="como-funciona" class="bg-brand-sage/20 py-24 border-y border-brand-sage/30">
+    <div class="max-w-5xl mx-auto px-6">
+      
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <h2 class="font-title font-bold text-3xl sm:text-4xl text-brand-terracotta uppercase tracking-tight mb-4">
+          Como Funciona
+        </h2>
+        <p class="font-body text-brand-dark/75 text-base sm:text-lg">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
         </p>
       </div>
 
-      <div class="p-6 bg-sand-100 rounded-2xl">
-        <span class="text-xs font-mono text-terracotta">02</span>
-        <h3 class="font-serif text-lg mt-2 mb-2">Processo Manual</h3>
-        <p class="text-sm text-clay/70 leading-relaxed">
-          Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper.
-        </p>
-      </div>
+      <!-- 3 Cartões -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Cartão 01 -->
+        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold text-brand-terracotta tracking-widest block mb-4">01</span>
+            <h3 class="font-title font-bold text-xl text-brand-dark mb-3">Lorem Ipsum Dolor</h3>
+            <p class="font-body text-sm text-brand-dark/70 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
+          </div>
+        </div>
 
-      <div class="p-6 bg-sand-100 rounded-2xl">
-        <span class="text-xs font-mono text-terracotta">03</span>
-        <h3 class="font-serif text-lg mt-2 mb-2">Comunidade Quieto</h3>
-        <p class="text-sm text-clay/70 leading-relaxed">
-          Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
+        <!-- Cartão 02 -->
+        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold text-brand-terracotta tracking-widest block mb-4">02</span>
+            <h3 class="font-title font-bold text-xl text-brand-dark mb-3">Amet Consectetur</h3>
+            <p class="font-body text-sm text-brand-dark/70 leading-relaxed">
+              Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue.
+            </p>
+          </div>
+        </div>
+
+        <!-- Cartão 03 -->
+        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-xs font-bold text-brand-terracotta tracking-widest block mb-4">03</span>
+            <h3 class="font-title font-bold text-xl text-brand-dark mb-3">Adipiscing Elit</h3>
+            <p class="font-body text-sm text-brand-dark/70 leading-relaxed">
+              Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Chamada Final -->
-  <section class="max-w-3xl mx-auto px-6 py-20 text-center border-t border-sand-200">
-    <h2 class="font-serif text-3xl mb-4">Pronto para descansar a cabeça?</h2>
-    <p class="text-sm text-clay/70 max-w-md mx-auto mb-8">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
+  <!-- ==================== DESCONECTE-SE (CTA INTERMÉDIO) ==================== -->
+  <section class="max-w-3xl mx-auto px-6 py-20 text-center">
+    <h2 class="font-title font-bold text-3xl sm:text-4xl text-brand-terracotta uppercase tracking-tight mb-4">
+      Desconecte-se
+    </h2>
+    <p class="font-body text-base sm:text-lg text-brand-dark/75 max-w-lg mx-auto mb-8">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crie com as mãos e desacelere o ritmo diário.
     </p>
-    <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer" 
-       class="inline-block bg-clay text-sand-50 text-sm font-medium px-8 py-4 rounded-full shadow-sm hover:bg-black transition-all">
-      Garantir minha vaga
+    <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer"
+       class="inline-block bg-brand-terracotta text-brand-cream font-mono text-xs sm:text-sm uppercase tracking-wider font-bold px-8 py-3.5 rounded-full shadow hover:bg-brand-dark hover:scale-105 transition-all">
+      Garantir Minha Vaga
     </a>
   </section>
 
-  <!-- Rodapé -->
-  <footer class="max-w-4xl mx-auto px-6 py-8 border-t border-sand-200 flex flex-col sm:flex-row justify-between items-center text-xs text-clay/50 gap-4">
-    <p>© 2026 Quieto. Todos os direitos reservados.</p>
-    <div class="flex gap-4">
-      <a href="#" class="hover:underline">Instagram</a>
-      <a href="#" class="hover:underline">Termos</a>
-      <a href="#" class="hover:underline">Privacidade</a>
+  <!-- ==================== MANIFESTO (QUIETO) ==================== -->
+  <section id="manifesto" class="py-24 border-t border-brand-dark/10">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="mb-8 flex justify-center">
+        <img src="quieto-logo.svg" alt="Quieto Manifesto" class="h-20 sm:h-24 w-auto filter-forest">
+      </div>
+      <p class="font-body text-lg sm:text-xl text-brand-dark/85 leading-relaxed">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Um espaço dedicado a desacelerar, valorizar o processo manual e respirar longe das notificações.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACTO (FALE CONOSCO) ==================== -->
+  <section id="contacto" class="bg-brand-pink/25 py-24 border-t border-brand-dark/10">
+    <div class="max-w-xl mx-auto px-6">
+      
+      <div class="text-center mb-10">
+        <h2 class="font-title font-bold text-3xl sm:text-4xl text-brand-terracotta uppercase tracking-tight mb-2">
+          Fale Conosco
+        </h2>
+        <p class="font-body text-sm text-brand-dark/70">
+          Dúvidas sobre o clube, parcerias ou oficinas? Escreve-nos uma mensagem.
+        </p>
+      </div>
+
+      <!-- Formulário Placeholder (Visualmente fiel) -->
+      <form onsubmit="event.preventDefault();" class="space-y-4">
+        <div>
+          <label class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">Nome</label>
+          <input type="text" placeholder="O teu nome" 
+                 class="w-full bg-brand-cream px-4 py-3 rounded-xl border border-brand-dark/15 focus:outline-none focus:border-brand-terracotta text-sm transition-colors">
+        </div>
+
+        <div>
+          <label class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">E-mail</label>
+          <input type="email" placeholder="nome@exemplo.com" 
+                 class="w-full bg-brand-cream px-4 py-3 rounded-xl border border-brand-dark/15 focus:outline-none focus:border-brand-terracotta text-sm transition-colors">
+        </div>
+
+        <div>
+          <label class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">Mensagem</label>
+          <textarea rows="4" placeholder="Escreve a tua mensagem aqui..." 
+                    class="w-full bg-brand-cream px-4 py-3 rounded-xl border border-brand-dark/15 focus:outline-none focus:border-brand-terracotta text-sm transition-colors"></textarea>
+        </div>
+
+        <div class="pt-2 flex justify-end">
+          <button type="submit" 
+                  class="bg-brand-terracotta text-brand-cream font-mono text-xs uppercase tracking-wider font-bold px-8 py-3 rounded-full hover:bg-brand-dark transition-all">
+            Enviar
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ==================== RODAPÉ COM REDES SOCIAIS ==================== -->
+  <footer class="bg-brand-cream py-12 border-t border-brand-dark/10">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      
+      <!-- Copyright & Info -->
+      <div class="flex items-center gap-4">
+        <img src="quieto-logo.svg" alt="Quieto" class="h-6 w-auto opacity-70">
+        <p class="font-mono text-xs text-brand-dark/60">
+          © 2026 Quieto. Todos os direitos reservados.
+        </p>
+      </div>
+
+      <!-- Ícones Redes Sociais -->
+      <div class="flex items-center gap-6">
+        <!-- YouTube (@quietopt) -->
+        <a href="https://youtube.com/@quietopt" target="_blank" rel="noopener noreferrer" 
+           class="text-brand-dark/70 hover:text-brand-terracotta transition-colors" aria-label="YouTube @quietopt">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram (@quieto.pt) -->
+        <a href="https://instagram.com/quieto.pt" target="_blank" rel="noopener noreferrer" 
+           class="text-brand-dark/70 hover:text-brand-terracotta transition-colors" aria-label="Instagram @quieto.pt">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok (@quieto.pt) -->
+        <a href="https://tiktok.com/@quieto.pt" target="_blank" rel="noopener noreferrer" 
+           class="text-brand-dark/70 hover:text-brand-terracotta transition-colors" aria-label="TikTok @quieto.pt">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+          </svg>
+        </a>
+      </div>
+
     </div>
   </footer>
+
+  <!-- Estilos auxiliares para colorir o ficheiro SVG inline via CSS -->
+  <style>
+    /* Transforma o SVG preto original em Terracota (#C05634) no topo */
+    .filter-terracotta {
+      filter: invert(41%) sepia(52%) saturate(1487%) hue-rotate(337deg) brightness(87%) contrast(93%);
+    }
+    /* Transforma o SVG preto original em Verde Floresta (#2B4C36) no Manifesto */
+    .filter-forest {
+      filter: invert(24%) sepia(21%) saturate(1210%) hue-rotate(94deg) brightness(96%) contrast(89%);
+    }
+  </style>
 
 </body>
 </html>
