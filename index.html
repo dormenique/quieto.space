@@ -38,14 +38,42 @@
       }
     }
   </script>
+  <style>
+    /* Renderização vetorial exata nas cores da paleta usando mask */
+    .logo-terracotta {
+      display: inline-block;
+      width: 130px;
+      height: 42px;
+      background-color: #C05634;
+      -webkit-mask: url('quieto-logo.svg') no-repeat center / contain;
+      mask: url('quieto-logo.svg') no-repeat center / contain;
+    }
+    .logo-forest {
+      display: inline-block;
+      width: 220px;
+      height: 72px;
+      background-color: #2B4C36;
+      -webkit-mask: url('quieto-logo.svg') no-repeat center / contain;
+      mask: url('quieto-logo.svg') no-repeat center / contain;
+    }
+    .logo-footer {
+      display: inline-block;
+      width: 80px;
+      height: 26px;
+      background-color: #2E2C28;
+      opacity: 0.65;
+      -webkit-mask: url('quieto-logo.svg') no-repeat center / contain;
+      mask: url('quieto-logo.svg') no-repeat center / contain;
+    }
+  </style>
 </head>
 <body class="bg-brand-cream text-brand-dark font-body antialiased selection:bg-brand-pink/30">
 
   <!-- ==================== HEADER ==================== -->
   <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-dark/10">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="inline-block transition-transform hover:scale-105" aria-label="Quieto Início">
-        <img src="quieto-logo.svg" alt="Quieto" class="h-10 w-auto filter-terracotta">
+      <a href="#" class="inline-flex items-center transition-transform hover:scale-105" aria-label="Quieto Início">
+        <span class="logo-terracotta"></span>
       </a>
 
       <!-- Desktop Nav -->
@@ -68,12 +96,16 @@
 
   <!-- ==================== HERO SECTION (O CLUBE) ==================== -->
   <section id="clube" class="max-w-4xl mx-auto px-6 pt-20 pb-24 text-center">
-    <h1 class="font-title font-extrabold text-5xl sm:text-6xl md:text-7xl text-brand-forest uppercase tracking-tight leading-tight mb-6">
-      AI Detox Club
+    <h1 class="font-title font-extrabold text-5xl sm:text-6xl md:text-7xl text-brand-forest uppercase tracking-tight leading-tight mb-4">
+      AI DETOX CLUB
     </h1>
 
-    <p class="font-body text-lg sm:text-xl text-brand-dark/80 max-w-xl mx-auto leading-relaxed mb-10">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Desconexão real e prática manual.
+    <h2 class="font-title font-bold text-2xl sm:text-3xl text-brand-terracotta mb-8">
+      Ter um hobbie é revolucionário.
+    </h2>
+
+    <p class="font-body text-lg sm:text-xl text-brand-dark/85 max-w-2xl mx-auto leading-relaxed mb-10">
+      Eu sei que você também está cansado de que tudo parecer de mentira. Tudo parece ter cheiro de plástico, tudo parece repetitivo e limitado. Esse club é um respiro pra quem está cansado da onda artificial ter se tornado uma coisa diária. Tá na hora de pegar num pincel, cortar um papel, sentir o cheiro da tinta.
     </p>
 
     <div>
@@ -90,77 +122,141 @@
     <div class="max-w-5xl mx-auto px-6">
       
       <div class="text-center max-w-xl mx-auto mb-16">
-        <h2 class="font-title font-bold text-3xl sm:text-4xl text-brand-terracotta uppercase tracking-tight mb-4">
+        <h2 class="font-title font-bold text-3xl sm:text-4xl text-brand-terracotta uppercase tracking-tight">
           Como Funciona
         </h2>
-        <p class="font-body text-brand-dark/75 text-base sm:text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
-        </p>
       </div>
 
-      <!-- 3 Cartões -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- 3 Cartões sem numeração, com marcadores -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
         
-        <!-- Cartão 01 -->
-        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-xs font-bold text-brand-terracotta tracking-widest block mb-4">01</span>
-            <h3 class="font-title font-bold text-xl text-brand-dark mb-3">Lorem Ipsum Dolor</h3>
-            <p class="font-body text-sm text-brand-dark/70 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
-            </p>
-          </div>
+        <!-- Cartão 1: O que é? -->
+        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-start">
+          <h3 class="font-title font-bold text-xl text-brand-forest mb-5 pb-3 border-b border-brand-dark/10">
+            O que é?
+          </h3>
+          <ul class="space-y-4 font-body text-sm sm:text-base text-brand-dark/80 leading-relaxed list-disc list-outside pl-5 marker:text-brand-terracotta">
+            <li>Um club de incentivo à produção de arte manual e tudo o que for natural, criado pelo cérebro humano.</li>
+            <li>Não é publicidade anti AI, é um desafio à criatividade e trabalho manual, pausar, ignorar os ecrãs por alguns minutos na semana.</li>
+          </ul>
         </div>
 
-        <!-- Cartão 02 -->
-        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-xs font-bold text-brand-terracotta tracking-widest block mb-4">02</span>
-            <h3 class="font-title font-bold text-xl text-brand-dark mb-3">Amet Consectetur</h3>
-            <p class="font-body text-sm text-brand-dark/70 leading-relaxed">
-              Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue.
-            </p>
-          </div>
+        <!-- Cartão 2: Como? -->
+        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-start">
+          <h3 class="font-title font-bold text-xl text-brand-forest mb-5 pb-3 border-b border-brand-dark/10">
+            Como?
+          </h3>
+          <ul class="space-y-4 font-body text-sm sm:text-base text-brand-dark/80 leading-relaxed list-disc list-outside pl-5 marker:text-brand-terracotta">
+            <li>1x na semana há um desafio em vídeo na área de membros da Hotmart para incentivar e trazer ideias orgânicas, sem intervenção dos robôs.</li>
+          </ul>
         </div>
 
-        <!-- Cartão 03 -->
-        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-between">
-          <div>
-            <span class="font-mono text-xs font-bold text-brand-terracotta tracking-widest block mb-4">03</span>
-            <h3 class="font-title font-bold text-xl text-brand-dark mb-3">Adipiscing Elit</h3>
-            <p class="font-body text-sm text-brand-dark/70 leading-relaxed">
-              Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            </p>
-          </div>
+        <!-- Cartão 3: Qual o conteúdo? -->
+        <div class="bg-brand-cream p-8 rounded-3xl shadow-sm border border-brand-dark/5 flex flex-col justify-start">
+          <h3 class="font-title font-bold text-xl text-brand-forest mb-5 pb-3 border-b border-brand-dark/10">
+            Qual o conteúdo?
+          </h3>
+          <ul class="space-y-4 font-body text-sm sm:text-base text-brand-dark/80 leading-relaxed list-disc list-outside pl-5 marker:text-brand-terracotta">
+            <li>Aulas de arte com materiais diversos, como por exemplo colagem, aguarela, pintura.</li>
+            <li>Todas as aulas são nível iniciante, os videos nunca são acelerados, mas têm alguns cortes. Há uma trilha calma no fundo.</li>
+            <li>As aulas são preenchidas com ideias de onde buscar inspiração sem recorrer à inteligência artificial.</li>
+          </ul>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ==================== DESCONECTE-SE (CTA INTERMÉDIO) ==================== -->
-  <section class="max-w-3xl mx-auto px-6 py-20 text-center">
-    <h2 class="font-title font-bold text-3xl sm:text-4xl text-brand-terracotta uppercase tracking-tight mb-4">
-      Desconecte-se
-    </h2>
-    <p class="font-body text-base sm:text-lg text-brand-dark/75 max-w-lg mx-auto mb-8">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Crie com as mãos e desacelere o ritmo diário.
-    </p>
-    <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer"
-       class="inline-block bg-brand-terracotta text-brand-cream font-mono text-xs sm:text-sm uppercase tracking-wider font-bold px-8 py-3.5 rounded-full shadow hover:bg-brand-dark hover:scale-105 transition-all">
-      Garantir Minha Vaga
-    </a>
+  <!-- ==================== MANIFESTO ==================== -->
+  <section id="manifesto" class="py-24 border-t border-brand-dark/10">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      
+      <!-- Logo centralizado em Verde Escuro (#2B4C36) -->
+      <div class="mb-10 flex justify-center">
+        <span class="logo-forest" aria-label="Quieto"></span>
+      </div>
+
+      <h3 class="font-title font-bold text-2xl sm:text-3xl text-brand-terracotta mb-8">
+        Erros e confusões fazem parte da comunicação humana.
+      </h3>
+
+      <div class="font-body text-base sm:text-lg text-brand-dark/85 leading-relaxed text-left space-y-6">
+        <p>
+          Todos os dias lidamos com AI, desde uma legenda no Instagram, até um cartaz publicitário gerado para um outdoor no meio da estrada. Nosso cérebro começa a se acostumar com tudo mastigado. Até pesquisar no Google virou um pesadelo.
+        </p>
+        <p>
+          Vamos deixar para os robôs somente a parte chata (ou a que mais odiamos fazer). Esse club NÃO É um manifesto ANTI AI, mas é uma forma de refúgio, uma pausa, um momento onde substituímos os robôs pelo nosso cérebro pra que ele não fique em segundo plano. Um lembrete que os seres humanos ainda existem, pensam e criam.
+        </p>
+        <p>
+          Isso significa que está proibido usar AI? Não. Eu mesma uso: gero códigos, agendo posts, crio trilhas. Deixo a parte chata e repetitiva pra tecnologia fazer. E tudo bem. Muita coisa boa veio com a AI e é ótimo não precisar fazer tudo manualmente as vezes. Mas só às vezes. Esse club é um respiro pra quem está cansado da onda artificial ter se tornado uma coisa diária. Tá na hora de pegar num pincel, cortar um papel, sentir o cheiro da tinta.
+        </p>
+      </div>
+
+    </div>
   </section>
 
-  <!-- ==================== MANIFESTO (QUIETO) ==================== -->
-  <section id="manifesto" class="py-24 border-t border-brand-dark/10">
-    <div class="max-w-2xl mx-auto px-6 text-center">
-      <div class="mb-8 flex justify-center">
-        <img src="quieto-logo.svg" alt="Quieto Manifesto" class="h-20 sm:h-24 w-auto filter-forest">
+  <!-- ==================== O QUE NESSE PROJETO É ARTIFICIAL? ==================== -->
+  <section class="bg-brand-purple/10 py-20 border-t border-brand-dark/10">
+    <div class="max-w-3xl mx-auto px-6">
+      
+      <div class="text-center mb-12">
+        <h2 class="font-title font-bold text-2xl sm:text-3xl md:text-4xl text-brand-forest uppercase tracking-tight mb-4">
+          O que nesse projeto é artificial?
+        </h2>
       </div>
-      <p class="font-body text-lg sm:text-xl text-brand-dark/85 leading-relaxed">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Um espaço dedicado a desacelerar, valorizar o processo manual e respirar longe das notificações.
-      </p>
+
+      <!-- Caixa de transparência e equilíbrio -->
+      <div class="bg-brand-cream p-8 sm:p-10 rounded-3xl shadow-sm border border-brand-dark/10 space-y-4 font-body text-base text-brand-dark/85 leading-relaxed">
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>O desenho do site foi feito manualmente no Figma, sem intervenção artificial.</span>
+        </p>
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>Os textos no site também foram todos escritos por um humano, sem intervenção artificial.</span>
+        </p>
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>Já o código foi feito pelo Gemini, depois do robô ter visto o design no Figma.</span>
+        </p>
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>O logo do Quieto é fruto de semanas de rascunho no papel e no Procreate App, feita por humano.</span>
+        </p>
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>Já a paleta de cores e a escolha das fontes foi decidida pelo Claude, com muita intervenção humana e referências de elementos reais.</span>
+        </p>
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>Os roteiros e ideias dos vídeos são feitos naturalmente por um humano.</span>
+        </p>
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>A edição também totalmente feita por um humano, no CapCut App.</span>
+        </p>
+        <p class="flex items-start gap-3">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta mt-2 shrink-0"></span>
+          <span>Já a organização de temas e títulos, trilha e transcrição foram feitas pelo Gemini.</span>
+        </p>
+
+        <!-- Conclusão em destaque -->
+        <div class="pt-6 mt-6 border-t border-brand-dark/10">
+          <p class="font-bold text-brand-dark text-lg sm:text-xl leading-relaxed">
+            Equilíbrio é a solução. Fingir nunca é a chave. A intervenção artificial existe aqui também, mas ela fica no lugar dela. Enquanto ela trabalha, temos mais tempo para os nossos hobbies.
+          </p>
+        </div>
+      </div>
+
+      <!-- Botão de Inscrição no final da secção -->
+      <div class="mt-12 text-center">
+        <a href="https://hotmart.com" target="_blank" rel="noopener noreferrer"
+           class="inline-block bg-brand-terracotta text-brand-cream font-mono text-xs sm:text-sm uppercase tracking-wider font-bold px-10 py-4 rounded-full shadow-md hover:bg-brand-dark hover:scale-105 transition-all">
+          Quero Fazer Parte
+        </a>
+        <p class="font-mono text-xs text-brand-dark/50 mt-3">Acesso via área de membros da Hotmart</p>
+      </div>
+
     </div>
   </section>
 
@@ -177,7 +273,7 @@
         </p>
       </div>
 
-      <!-- Formulário Placeholder (Visualmente fiel) -->
+      <!-- Formulário Placeholder -->
       <form onsubmit="event.preventDefault();" class="space-y-4">
         <div>
           <label class="block font-mono text-xs uppercase tracking-wider text-brand-dark/80 mb-1">Nome</label>
@@ -214,7 +310,7 @@
       
       <!-- Copyright & Info -->
       <div class="flex items-center gap-4">
-        <img src="quieto-logo.svg" alt="Quieto" class="h-6 w-auto opacity-70">
+        <span class="logo-footer" aria-label="Quieto"></span>
         <p class="font-mono text-xs text-brand-dark/60">
           © 2026 Quieto. Todos os direitos reservados.
         </p>
@@ -249,18 +345,6 @@
 
     </div>
   </footer>
-
-  <!-- Estilos auxiliares para colorir o ficheiro SVG inline via CSS -->
-  <style>
-    /* Transforma o SVG preto original em Terracota (#C05634) no topo */
-    .filter-terracotta {
-      filter: invert(41%) sepia(52%) saturate(1487%) hue-rotate(337deg) brightness(87%) contrast(93%);
-    }
-    /* Transforma o SVG preto original em Verde Floresta (#2B4C36) no Manifesto */
-    .filter-forest {
-      filter: invert(24%) sepia(21%) saturate(1210%) hue-rotate(94deg) brightness(96%) contrast(89%);
-    }
-  </style>
 
 </body>
 </html>
