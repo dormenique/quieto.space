@@ -6,20 +6,28 @@
   <title id="page-title">Quieto | AI Detox Club</title>
   
   <!-- Ícone da Aba do Navegador (Favicon em Terracota) -->
-  <link rel="icon" type="image/svg+xml" href="quieto-logo-simples.svg">
+  <link id="favicon-link" rel="icon" type="image/svg+xml" href="quieto-logo-simples.svg">
   <script>
-    fetch('quieto-logo-simples.svg')
-      .then(res => res.text())
-      .then(svgText => {
-        let terracottaSvg = svgText
-          .replace(/#000000|black/gi, '#C05634')
-          .replace(/<path(?![^>]*fill=)/i, '<path fill="#C05634" ')
-          .replace(/<svg(?![^>]*fill=)/i, '<svg fill="#C05634" ');
-        const blob = new Blob([terracottaSvg], { type: 'image/svg+xml' });
-        const iconLink = document.querySelector("link[rel*='icon']");
-        if (iconLink) iconLink.href = URL.createObjectURL(blob);
-      })
-      .catch(() => {});
+    function applyFavicon(svgPath) {
+      fetch(svgPath)
+        .then(res => res.text())
+        .then(svgText => {
+          if (svgText.trim().startsWith('<svg')) {
+            let terracottaSvg = svgText
+              .replace(/#000000|black/gi, '#C05634')
+              .replace(/<path(?![^>]*fill=)/i, '<path fill="#C05634" ')
+              .replace(/<svg(?![^>]*fill=)/i, '<svg fill="#C05634" ');
+            const blob = new Blob([terracottaSvg], { type: 'image/svg+xml' });
+            const iconLink = document.getElementById('favicon-link');
+            if (iconLink) iconLink.href = URL.createObjectURL(blob);
+          } else {
+            const iconLink = document.getElementById('favicon-link');
+            if (iconLink) iconLink.href = svgPath;
+          }
+        })
+        .catch(() => {});
+    }
+    applyFavicon('quieto-logo-simples.svg');
   </script>
 
   <!-- Tailwind CSS via CDN -->
@@ -89,7 +97,7 @@
   <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-dark/10">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
       <a href="#" class="inline-flex items-center transition-transform hover:scale-105" aria-label="Quieto Início">
-        <span class="logo-terracotta"></span>
+        <span id="logo-header-el" class="logo-terracotta"></span>
       </a>
 
       <!-- Desktop Nav -->
@@ -113,7 +121,6 @@
 
   <!-- ==================== HERO SECTION (COM IMAGEM DE FUNDO EM TRANSPARÊNCIA SUAVE) ==================== -->
   <section id="clube" class="relative overflow-hidden border-b border-brand-dark/10">
-    <!-- Camada de Imagem Placeholder com Transparência Baixa -->
     <div class="absolute inset-0 z-0">
       <img id="hero-bg-img" src="hero-bg.jpg" alt="" 
            onerror="this.style.display='none'"
@@ -198,7 +205,7 @@
             <path d="M21 15l-5-5L5 21"></path>
           </svg>
           <span class="font-mono text-xs uppercase tracking-wider">Espaço para Foto</span>
-          <span class="font-mono text-[11px] mt-1">(manifesto-foto.jpg)</span>
+          <span id="manifesto-placeholder-name" class="font-mono text-[11px] mt-1">(manifesto-foto.jpg)</span>
         </div>
       </div>
 
@@ -209,7 +216,7 @@
           <h2 id="manifesto-title" class="font-title font-extrabold text-3xl sm:text-4xl text-brand-terracotta uppercase tracking-tight">
             MANIFESTO
           </h2>
-          <span class="logo-forest" aria-label="Quieto"></span>
+          <span id="logo-manifesto-el" class="logo-forest" aria-label="Quieto"></span>
         </div>
 
         <h3 id="manifesto-subtitle" class="font-title font-bold text-xl sm:text-2xl text-brand-forest mb-6 leading-snug">
@@ -353,7 +360,7 @@
     <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
       
       <div class="flex items-center gap-4">
-        <span class="logo-footer" aria-label="Quieto"></span>
+        <span id="logo-footer-el" class="logo-footer" aria-label="Quieto"></span>
         <p id="footer-copyright" class="font-mono text-xs text-brand-dark/60">
           © 2026 Quieto. Todos os direitos reservados.
         </p>
@@ -397,11 +404,42 @@
       connection_error_status: "Erro de ligação. Tenta novamente mais tarde."
     };
 
-    // 1. Carregar conteúdos do textos.json
+    // 1. Carregar conteúdos e imagens do textos.json
     fetch('textos.json')
       .then(r => r.json())
       .then(data => {
         if (data.meta?.title) document.title = data.meta.title;
+
+        // Imagens centralizadas
+        if (data.imagens) {
+          if (data.imagens.favicon) applyFavicon(data.imagens.favicon);
+          if (data.imagens.logo_header) {
+            const el = document.getElementById('logo-header-el');
+            el.style.webkitMaskImage = `url('${data.imagens.logo_header}')`;
+            el.style.maskImage = `url('${data.imagens.logo_header}')`;
+          }
+          if (data.imagens.logo_manifesto) {
+            const el = document.getElementById('logo-manifesto-el');
+            el.style.webkitMaskImage = `url('${data.imagens.logo_manifesto}')`;
+            el.style.maskImage = `url('${data.imagens.logo_manifesto}')`;
+          }
+          if (data.imagens.logo_footer) {
+            const el = document.getElementById('logo-footer-el');
+            el.style.webkitMaskImage = `url('${data.imagens.logo_footer}')`;
+            el.style.maskImage = `url('${data.imagens.logo_footer}')`;
+          }
+          if (data.imagens.hero_fundo) {
+            const heroImg = document.getElementById('hero-bg-img');
+            heroImg.style.display = '';
+            heroImg.src = data.imagens.hero_fundo;
+          }
+          if (data.imagens.manifesto_foto) {
+            const manImg = document.getElementById('manifesto-img');
+            manImg.style.display = '';
+            manImg.src = data.imagens.manifesto_foto;
+            document.getElementById('manifesto-placeholder-name').textContent = `(${data.imagens.manifesto_foto})`;
+          }
+        }
 
         // Header
         if (data.header?.nav) {
@@ -416,7 +454,6 @@
 
         // Hero
         if (data.hero) {
-          if (data.hero.background_image) document.getElementById('hero-bg-img').src = data.hero.background_image;
           document.getElementById('hero-title').textContent = data.hero.title;
           document.getElementById('hero-subtitle').textContent = data.hero.subtitle;
           document.getElementById('hero-description').textContent = data.hero.description;
@@ -446,7 +483,6 @@
         // Manifesto
         if (data.manifesto) {
           if (data.manifesto.title) document.getElementById('manifesto-title').textContent = data.manifesto.title;
-          if (data.manifesto.image) document.getElementById('manifesto-img').src = data.manifesto.image;
           document.getElementById('manifesto-subtitle').textContent = data.manifesto.subtitle;
           if (Array.isArray(data.manifesto.paragraphs)) {
             document.getElementById('manifesto-paragraphs').innerHTML = data.manifesto.paragraphs.map(p => `<p>${p}</p>`).join('');

@@ -2,6 +2,14 @@
   "meta": {
     "title": "Quieto | AI Detox Club"
   },
+  "imagens": {
+    "favicon": "quieto-logo-simples.svg",
+    "logo_header": "quieto-logo.svg",
+    "logo_manifesto": "quieto-logo-simples.svg",
+    "logo_footer": "quieto-logo.svg",
+    "hero_fundo": "hero-bg.jpg",
+    "manifesto_foto": "manifesto-foto.jpg"
+  },
   "header": {
     "nav": {
       "clube": "O Clube",
@@ -14,7 +22,6 @@
     "cta_url": "https://hotmart.com"
   },
   "hero": {
-    "background_image": "hero-bg.jpg",
     "title": "AI DETOX CLUB",
     "subtitle": "Ter um hobbie é revolucionário.",
     "description": "Eu sei que você também está cansado de que tudo parecer de mentira. Tudo parece ter cheiro de plástico, tudo parece repetitivo e limitado. Esse club é um respiro pra quem está cansado da onda artificial ter se tornado uma coisa diária. Tá na hora de pegar num pincel, cortar um papel, sentir o cheiro da tinta.",
@@ -50,7 +57,6 @@
   },
   "manifesto": {
     "title": "MANIFESTO",
-    "image": "manifesto-foto.jpg",
     "subtitle": "Erros e confusões fazem parte da comunicação humana.",
     "paragraphs": [
       "Todos os dias lidamos com AI, desde uma legenda no Instagram, até um cartaz publicitário gerado para um outdoor no meio da estrada. Nosso cérebro começa a se acostumar com tudo mastigado. Até pesquisar no Google virou um pesadelo.",
