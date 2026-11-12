@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Quieto | AI Detox Club"
+  },
+  "header": {
+    "nav": {
+      "clube": "O Clube",
+      "como_funciona": "Como Funciona",
+      "manifesto": "Manifesto",
+      "contacto": "Contacto"
+    },
+    "cta_button": "Fazer Parte",
+    "cta_url": "https://hotmart.com"
+  },
+  "hero": {
+    "title": "AI DETOX CLUB",
+    "subtitle": "Ter um hobbie é revolucionário.",
+    "description": "Eu sei que você também está cansado de que tudo parecer de mentira. Tudo parece ter cheiro de plástico, tudo parece repetitivo e limitado. Esse club é um respiro pra quem está cansado da onda artificial ter se tornado uma coisa diária. Tá na hora de pegar num pincel, cortar um papel, sentir o cheiro da tinta.",
+    "cta_button": "Quero Fazer Parte",
+    "cta_url": "https://hotmart.com",
+    "cta_note": "Acesso via área de membros da Hotmart"
+  },
+  "como_funciona": {
+    "title": "Como Funciona",
+    "cards": [
+      {
+        "title": "O que é?",
+        "items": [
+          "Um club de incentivo à produção de arte manual e tudo o que for natural, criado pelo cérebro humano.",
+          "Não é publicidade anti AI, é um desafio à criatividade e trabalho manual, pausar, ignorar os ecrãs por alguns minutos na semana."
+        ]
+      },
+      {
+        "title": "Como?",
+        "items": [
+          "1x na semana há um desafio em vídeo na área de membros da Hotmart para incentivar e trazer ideias orgânicas, sem intervenção dos robôs."
+        ]
+      },
+      {
+        "title": "Qual o conteúdo?",
+        "items": [
+          "Aulas de arte com materiais diversos, como por exemplo colagem, aguarela, pintura.",
+          "Todas as aulas são nível iniciante, os videos nunca são acelerados, mas têm alguns cortes. Há uma trilha calma no fundo.",
+          "As aulas são preenchidas com ideias de onde buscar inspiração sem recorrer à inteligência artificial."
+        ]
+      }
+    ]
+  },
+  "manifesto": {
+    "subtitle": "Erros e confusões fazem parte da comunicação humana.",
+    "paragraphs": [
+      "Todos os dias lidamos com AI, desde uma legenda no Instagram, até um cartaz publicitário gerado para um outdoor no meio da estrada. Nosso cérebro começa a se acostumar com tudo mastigado. Até pesquisar no Google virou um pesadelo.",
+      "Vamos deixar para os robôs somente a parte chata (ou a que mais odiamos fazer). Esse club NÃO É um manifesto ANTI AI, mas é uma forma de refúgio, uma pausa, um momento onde substituímos os robôs pelo nosso cérebro pra que ele não fique em segundo plano. Um lembrete que os seres humanos ainda existem, pensam e criam.",
+      "Isso significa que está proibido usar AI? Não. Eu mesma uso: gero códigos, agendo posts, crio trilhas. Deixo a parte chata e repetitiva pra tecnologia fazer. E tudo bem. Muita coisa boa veio com a AI e é ótimo não precisar fazer tudo manualmente as vezes. Mas só às vezes. Esse club é um respiro pra quem está cansado da onda artificial ter se tornado uma coisa diária. Tá na hora de pegar num pincel, cortar um papel, sentir o cheiro da tinta."
+    ]
+  },
+  "transparencia_artificial": {
+    "title": "O que nesse projeto é artificial?",
+    "items": [
+      "O desenho do site foi feito manualmente no Figma, sem intervenção artificial.",
+      "Os textos no site também foram todos escritos por um humano, sem intervenção artificial.",
+      "Já o código foi feito pelo Gemini, depois do robô ter visto o design no Figma.",
+      "O logo do Quieto é fruto de semanas de rascunho no papel e no Procreate App, feita por humano.",
+      "Já a paleta de cores e a escolha das fontes foi decidida pelo Claude, com muita intervenção humana e referências de elementos reais.",
+      "Os roteiros e ideias dos vídeos são feitos naturalmente por um humano.",
+      "A edição também totalmente feita por um humano, no CapCut App.",
+      "Já a organização de temas e títulos, trilha e transcrição foram feitas pelo Gemini."
+    ],
+    "conclusion": "Equilíbrio é a solução. Fingir nunca é a chave. A intervenção artificial existe aqui também, mas ela fica no lugar dela. Enquanto ela trabalha, temos mais tempo para os nossos hobbies.",
+    "cta_button": "Quero Fazer Parte",
+    "cta_url": "https://hotmart.com",
+    "cta_note": "Acesso via área de membros da Hotmart"
+  },
+  "contacto": {
+    "title": "Fale Conosco",
+    "subtitle": "Dúvidas sobre o clube, parcerias ou oficinas? Escreve-nos uma mensagem.",
+    "form": {
+      "name_label": "Nome",
+      "name_placeholder": "O teu nome",
+      "email_label": "E-mail",
+      "email_placeholder": "nome@exemplo.com",
+      "message_label": "Mensagem",
+      "message_placeholder": "Escreve a tua mensagem aqui...",
+      "submit_button": "Enviar",
+      "sending_button": "Enviando...",
+      "sent_button": "Enviado",
+      "sending_status": "A enviar a mensagem...",
+      "success_status": "Mensagem enviada com sucesso! Obrigada.",
+      "error_status": "Erro ao enviar. Tenta novamente.",
+      "connection_error_status": "Erro de ligação. Tenta novamente mais tarde."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Quieto. Todos os direitos reservados.",
+    "socials": {
+      "youtube": "https://youtube.com/@quietopt",
+      "instagram": "https://instagram.com/quieto.pt",
+      "tiktok": "https://tiktok.com/@quieto.pt"
+    }
+  }
+}
