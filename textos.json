@@ -7,12 +7,14 @@
       "clube": "O Clube",
       "como_funciona": "Como Funciona",
       "manifesto": "Manifesto",
+      "bastidores": "Bastidores",
       "contacto": "Contacto"
     },
     "cta_button": "Fazer Parte",
     "cta_url": "https://hotmart.com"
   },
   "hero": {
+    "background_image": "hero-bg.jpg",
     "title": "AI DETOX CLUB",
     "subtitle": "Ter um hobbie é revolucionário.",
     "description": "Eu sei que você também está cansado de que tudo parecer de mentira. Tudo parece ter cheiro de plástico, tudo parece repetitivo e limitado. Esse club é um respiro pra quem está cansado da onda artificial ter se tornado uma coisa diária. Tá na hora de pegar num pincel, cortar um papel, sentir o cheiro da tinta.",
@@ -47,6 +49,8 @@
     ]
   },
   "manifesto": {
+    "title": "MANIFESTO",
+    "image": "manifesto-foto.jpg",
     "subtitle": "Erros e confusões fazem parte da comunicação humana.",
     "paragraphs": [
       "Todos os dias lidamos com AI, desde uma legenda no Instagram, até um cartaz publicitário gerado para um outdoor no meio da estrada. Nosso cérebro começa a se acostumar com tudo mastigado. Até pesquisar no Google virou um pesadelo.",
@@ -70,6 +74,13 @@
     "cta_button": "Quero Fazer Parte",
     "cta_url": "https://hotmart.com",
     "cta_note": "Acesso via área de membros da Hotmart"
+  },
+  "bastidores": {
+    "title": "Bastidores",
+    "subtitle": "Os últimos vídeos e processos manuais publicados no nosso canal.",
+    "youtube_channel_url": "https://www.youtube.com/@quietopt",
+    "youtube_handle": "@quietopt",
+    "cta_youtube": "Ver canal completo no YouTube"
   },
   "contacto": {
     "title": "Fale Conosco",
