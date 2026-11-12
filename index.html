@@ -394,6 +394,7 @@
 
   <!-- ==================== SCRIPTS: CARREGAR JSON, YOUTUBE FEED E FORMULÁRIO ==================== -->
   <script>
+    let youtubeChannelId = "UCkXQ2T-U5pY6yl1CInQJnaA";
     let formMessages = {
       submit_button: "Enviar",
       sending_button: "Enviando...",
@@ -512,6 +513,9 @@
           document.getElementById('bastidores-subtitle').textContent = data.bastidores.subtitle;
           document.getElementById('bastidores-cta').href = data.bastidores.youtube_channel_url;
           document.getElementById('bastidores-cta-text').textContent = data.bastidores.cta_youtube;
+          if (data.bastidores.youtube_channel_id) {
+            youtubeChannelId = data.bastidores.youtube_channel_id;
+          }
         }
 
         // Contacto
@@ -539,13 +543,17 @@
             document.getElementById('social-tiktok').href = data.footer.socials.tiktok;
           }
         }
-      })
-      .catch(err => console.log('Usando textos padrão:', err));
 
-    // 2. Carregar últimos 3 vídeos do YouTube (@quietopt) via RSS público
-    async function loadYouTubeVideos() {
+        loadYouTubeVideos(youtubeChannelId);
+      })
+      .catch(() => {
+        loadYouTubeVideos(youtubeChannelId);
+      });
+
+    // 2. Carregar últimos 3 vídeos do YouTube via channel_id oficial
+    async function loadYouTubeVideos(channelId) {
       const grid = document.getElementById('youtube-feed-grid');
-      const rssUrl = encodeURIComponent('https://www.youtube.com/feeds/videos.xml?user=quietopt');
+      const rssUrl = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`);
       try {
         const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssUrl}`);
         const data = await res.json();
@@ -586,16 +594,10 @@
     function renderYouTubeFallback(grid) {
       grid.innerHTML = `
         <div class="md:col-span-3 bg-brand-sage/10 rounded-3xl p-10 text-center border border-brand-dark/5">
-          <p class="font-body text-brand-dark/75 mb-4">Acompanhe os processos manuais, colagens e conversas sem pressa diretamente no nosso canal.</p>
-          <a href="https://www.youtube.com/@quietopt" target="_blank" rel="noopener noreferrer" 
-             class="inline-block bg-brand-terracotta text-brand-cream font-mono text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-brand-dark transition-colors">
-            Abrir @quietopt no YouTube
-          </a>
+          <p class="font-body text-brand-dark/75">Acompanhe os processos manuais, colagens e conversas sem pressa diretamente no nosso canal.</p>
         </div>
       `;
     }
-
-    loadYouTubeVideos();
 
     // 3. Submissão do formulário Formspree
     const form = document.getElementById('contact-form');
